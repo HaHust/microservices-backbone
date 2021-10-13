@@ -1,0 +1,25 @@
+#Port name
+server:
+  port: 8761
+
+#Service name
+spring:
+  application:
+    name: eurekaserver
+
+#Configure eureka server
+eureka:
+  instance:
+    hostname: localhost
+
+#    Application priority to use real ip address instead of name server
+    prefer-ip-address: true
+
+#    Itself is both a client and a server. it must configure a property client
+  client:
+
+#    Inform the server that it only is server and in the future it won't be a client eureka
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
