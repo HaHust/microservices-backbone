@@ -14,6 +14,14 @@ import org.springframework.stereotype.Component;
 public class ServiceOneConfig {
     private String msg;
 
+    private String usernameDB;
+
+    private String passwordDB;
+
+    private String url;
+
+    private String driverDB;
+
     public String getMsg() {
         return msg;
     }
@@ -22,10 +30,46 @@ public class ServiceOneConfig {
         this.msg = msg;
     }
 
+    public String getUsernameDB() {
+        return usernameDB;
+    }
+
+    public void setUsernameDB(String usernameDB) {
+        this.usernameDB = usernameDB;
+    }
+
+    public String getPasswordDB() {
+        return passwordDB;
+    }
+
+    public void setPasswordDB(String passwordDB) {
+        this.passwordDB = passwordDB;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDriverDB() {
+        return driverDB;
+    }
+
+    public void setDriverDB(String driverDB) {
+        this.driverDB = driverDB;
+    }
+
     @Override
     public String toString() {
         return "ServiceOneConfig{" +
                 "msg='" + msg + '\'' +
+                ", usernameDB='" + usernameDB + '\'' +
+                ", passwordDB='" + passwordDB + '\'' +
+                ", url='" + url + '\'' +
+                ", driverDB='" + driverDB + '\'' +
                 '}';
     }
 }
