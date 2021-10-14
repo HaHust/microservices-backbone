@@ -13,10 +13,19 @@ public class DetailStringController {
     @Autowired
     private Environment environment;
 
+    @Autowired
+    private ServiceOneConfig serviceOneConfig;
+
     @GetMapping("/add-string/{sample}")
     public StringEntity addString(@PathVariable String sample){
         StringEntity result = addStringServiceProxy.addString(sample);
         result.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
         return result;
+    }
+
+//    This is a entrypoint which is an example for getting config infor
+    @GetMapping("/properties")
+    public String getProperty(){
+        return serviceOneConfig.getMsg();
     }
 }
