@@ -44,8 +44,8 @@ public class DetailStringController {
 
     // Working with Resilience4j
     @GetMapping("/sample-url")
-//    @Retry(name="service-two", fallbackMethod = "serviceTwoFallBack")
-    @CircuitBreaker(name = "default", fallbackMethod = "serviceTwoFallBack")
+    @Retry(name="service-two", fallbackMethod = "serviceTwoFallBack")
+//    @CircuitBreaker(name = "default", fallbackMethod = "serviceTwoFallBack")
     public String testResilency4j(){
         ResponseEntity<String> stringResponseEntity = new RestTemplate().getForEntity("http://localhost:9000/aasdf", String.class);
         return stringResponseEntity.getBody();
