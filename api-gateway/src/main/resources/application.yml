@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: api_gateway
+
+#  Important config to every request also move on api gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+server:
+  port: 8765
+
+# Configure eureka server
+eureka:
+
+  #    Itself is both a client and a server. it must configure a property client
+  client:
+
+    #    Inform the server that it only is server and in the future it won't be a client eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

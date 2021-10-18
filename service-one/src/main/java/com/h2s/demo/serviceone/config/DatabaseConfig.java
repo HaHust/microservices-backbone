@@ -6,12 +6,10 @@
 package com.h2s.demo.serviceone.config;
 
 import com.h2s.demo.serviceone.ServiceOneConfig;
-import com.netflix.discovery.converters.Auto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
@@ -30,4 +28,5 @@ public class DatabaseConfig {
         dataSourceBuilder.password(serviceOneConfig.getPasswordDB());
         return dataSourceBuilder.build();
     }
+
 }
